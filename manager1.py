@@ -1,0 +1,1 @@
+from Parcer_TJ_Postgre import Parser_TJ

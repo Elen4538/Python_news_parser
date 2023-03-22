@@ -1,0 +1,27 @@
+{% extends 'news/base.html' %}
+{% load news_tags %}
+
+{% block content %}
+
+{% get_habrnews as hb %}
+
+<h1>Full amount of posts in DB from Habr: {{hb.user_id}}</h1>
+
+    <h2>Date: {{hb.post_date}}<br>
+        {{hb.post_header}}</h2>
+    <p>
+        {{hb.post_text}}<br>
+
+        {% if hb.image_url == 'no picture' %}
+        
+            <img src="{{ MEDIA_URL }}/cat.png"/>
+
+        {% else %}
+            <img src={{hb.image_url}}>
+        
+        {% endif %}
+
+    </p>
+    
+
+{% endblock %}

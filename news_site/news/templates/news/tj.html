@@ -1,0 +1,28 @@
+{% extends 'news/base.html' %}
+<!--{% load static %}-->
+{% load news_tags %}
+
+
+{% block content %} 
+<!-- posts.post_number -->
+
+{% get_tjnews as tj1 %}
+
+
+<h1>Full amount of posts in DB from TJ: {{tj1.post_number}}</h1>
+
+   
+    <h3>Date: {{tj1.post_date}}<br>
+        <br>{{tj1.post_header}}</h3>
+    <p>{{tj1.post_text|linebreaks}}
+        {% if tj1.picture_url == 'no picture' %}
+            <img src="{{ MEDIA_URL }}/cat3.png"/>
+
+        {% else %}
+            <img src={{tj1.picture_url}}>
+
+        {% endif %}
+    
+    </p>
+    
+{% endblock %}

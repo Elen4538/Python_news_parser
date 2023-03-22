@@ -1,0 +1,70 @@
+{% extends 'news/base.html' %}
+{% load news_tags %}
+
+
+{% block content %}
+
+{% sum_news as sn %}
+{% get_vcnews as vc1 %}
+{% get_tjnews as tj1 %}
+{% get_habrnews as hb %}
+
+
+<h1>Full amount of posts in DBs: {{sn}}</h1>
+<p>
+    
+    <table border = 8>
+       
+        <tr>
+            <td>Source name</td>
+            <td>Amount of posts</td>
+        </tr>
+        
+        <tr>
+            <td>TJ</td>
+            <td>{{tj1.post_number}}</td>
+        </tr>
+
+        <tr>
+            <td>VC</td>
+            <td>{{vc1.post_number}}</td>
+
+        </tr>
+
+        <tr>
+  
+            <td>Habr</td>
+            <td>{{hb.user_id}}</td>
+        
+        </tr>
+    </table>
+    Script status
+    <table border=8>
+        <tr>
+            <td>name</td>
+            <td>status</td>
+        </tr>
+        
+        <tr>
+            <td>TJ</td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td>VC</td>
+            <td></td>
+
+        </tr>
+
+        <tr>
+  
+            <td>Habr</td>
+            <td></td>
+        
+        </tr>
+
+    </table>
+</p>
+
+{% endblock %}
+

@@ -1,0 +1,38 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF8">
+        <title>{{title}}</title>
+    </head>
+
+    <body>
+        {% block mainmenu %}
+        <ul>
+            <!--Sidebar сверху-->
+            <table border = 10 bordercolor = green>
+                <tr>
+                    
+                {% for m in menu %}
+
+                <th><a href="{% url m.url_name %}">{{m.title}}</a></th>
+                {% endfor %}
+                
+                </tr>
+            </table>
+
+        </ul>
+        {% endblock mainmenu%}
+
+
+        {% block content %}
+        {% endblock %}
+
+
+        <footer>Copyright Elena<br>
+            Email: mpl4538@gmail.com
+
+        </footer>
+    </body>
+</html>

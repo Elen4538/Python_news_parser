@@ -1,0 +1,27 @@
+{% extends 'news/base.html' %}
+{% load news_tags %}
+
+{% block content %}
+
+{% get_vcnews as vc1 %}
+
+<h1>Full amount of posts in DB from VC: {{vc1.post_number}}</h1>
+
+<h3><br>Date: {{vc1.post_date}}
+    <br>{{vc1.post_header}}
+</h3>
+    <p>
+        <br>{{vc1.post_text}}
+        <br>
+        {% if vc1.picture_url == 'no picture' %}
+            <img src="{{ MEDIA_URL }}/cat1.png"/>
+
+        {% else %}
+            <img src={{vc1.picture_url}}>
+
+        
+        {% endif %}
+
+
+</p>
+{% endblock %}
